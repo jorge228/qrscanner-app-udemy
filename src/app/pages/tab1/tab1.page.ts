@@ -18,22 +18,21 @@ export class Tab1Page {
   constructor(private barcodeScanner: BarcodeScanner,
     private dataLocal: DataLocalService) { }
 
-  ionViewDidEnter() {
-    console.log('ionViewDidEnter()');
-  }
+  // ionViewDidEnter() {
+  //   console.log('ionViewDidEnter()');
+  // }
 
-  ionViewDidLeave() {
-    console.log('ionViewDidLeave()');
-  }
+  // ionViewDidLeave() {
+  //   console.log('ionViewDidLeave()');
+  // }
 
-  ionViewWillEnter() {
-    console.log('ionViewWillEnter()');
-    this.scan();
-  }
+  // ionViewWillEnter() {
+  //   console.log('ionViewWillEnter()');
+  // }
 
-  ionViewWillLeave() {
-    console.log('ionViewWillLeave()');
-  }
+  // ionViewWillLeave() {
+  //   console.log('ionViewWillLeave()');
+  // }
 
   scan() {
     this.barcodeScanner.scan().then(barcodeData => {

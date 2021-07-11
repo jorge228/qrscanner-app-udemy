@@ -1,10 +1,24 @@
-<ion-header [translucent]="true">
+<ion-header [translucent]="true" no-border>
   <ion-toolbar>
     <ion-title>
       Historial
     </ion-title>
+
+    <ion-button (click)="sendMail()" color="primary" slot="end">
+      <ion-icon slot="icon-only" name="send"></ion-icon>
+    </ion-button>
+
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
+  <ion-list>
+    <ion-item *ngFor="let r of dataLocal.record" (click)="openRecord(r)" detail>
+      <ion-icon slot="start" color="primary" [name]="r.icon"></ion-icon>
+      <ion-label>
+        <h2>{{r.text}}</h2>
+        <p>{{r.created | date: 'medium'}}</p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
 </ion-content>
