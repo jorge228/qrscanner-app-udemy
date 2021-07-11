@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import { Registration } from '../models/registration.model';
 import { Storage } from '@ionic/storage-angular';
+import { NavController } from '@ionic/angular';
+import { InAppBrowser } from '@ionic-native/in-app-browser/ngx';
 
 @Injectable({
   providedIn: 'root'
@@ -10,7 +12,9 @@ export class DataLocalService {
   private _storage: Storage | null = null;
   record: Registration[] = [];
 
-  constructor(private storage: Storage) {
+  constructor(private storage: Storage,
+    private navCtrl: NavController,
+    private iab: InAppBrowser) {
     this.init();
   }
 
@@ -29,6 +33,20 @@ export class DataLocalService {
     this.record.unshift(newRecord);
     console.log(this.record);
     this._storage?.set('records', this.record);
+    this.openRecord(newRecord);
+  }
+
+  openRecord(record: Registration) {
+    this.navCtrl.navigateForward('/tabs/tab2');
+    switch (record.type) {
+      case 'http':
+        this.iab.create(record.text, '_system');
+
+        break;
+
+      default:
+        break;
+    }
   }
 
 }

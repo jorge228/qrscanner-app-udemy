@@ -11,7 +11,7 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
+<ion-content [fullscreen]="false">
   <ion-list>
     <ion-item *ngFor="let r of dataLocal.record" (click)="openRecord(r)" detail>
       <ion-icon slot="start" color="primary" [name]="r.icon"></ion-icon>

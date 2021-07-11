@@ -17,6 +17,7 @@ export class Tab2Page {
 
   openRecord(r: Registration) {
     console.log(r);
+    this.dataLocal.openRecord(r);
   }
 
 }

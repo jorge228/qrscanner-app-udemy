@@ -11,6 +11,7 @@ import { AppComponent } from './app.component';
 // https://ionicframework.com/docs/native/barcode-scanner
 import { BarcodeScanner } from '@ionic-native/barcode-scanner/ngx';
 import { IonicStorageModule } from '@ionic/storage-angular';
+import { InAppBrowser } from '@ionic-native/in-app-browser/ngx';
 
 @NgModule({
   declarations: [AppComponent],
@@ -23,7 +24,8 @@ import { IonicStorageModule } from '@ionic/storage-angular';
   ],
   providers: [
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
-    BarcodeScanner
+    BarcodeScanner,
+    InAppBrowser
   ],
   bootstrap: [AppComponent],
 })
