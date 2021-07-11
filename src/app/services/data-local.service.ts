@@ -31,7 +31,7 @@ export class DataLocalService {
   saveRecord(format: string, text: string) {
     const newRecord = new Registration(format, text);
     this.record.unshift(newRecord);
-    console.log(this.record);
+    // console.log(this.record);
     this._storage?.set('records', this.record);
     this.openRecord(newRecord);
   }
@@ -41,9 +41,10 @@ export class DataLocalService {
     switch (record.type) {
       case 'http':
         this.iab.create(record.text, '_system');
-
         break;
-
+      case 'geo':
+        this.navCtrl.navigateForward(`/tabs/tab2/map/${record.text}`);
+        break;
       default:
         break;
     }

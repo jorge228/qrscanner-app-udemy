@@ -35,14 +35,18 @@ export class Tab1Page {
   // }
 
   scan() {
-    this.barcodeScanner.scan().then(barcodeData => {
+    this.barcodeScanner.scan()
+    .then(barcodeData => {
       console.log('Barcode data', barcodeData);
       if (!barcodeData.cancelled) {
         this.dataLocal.saveRecord(barcodeData.format, barcodeData.text);
       }
     }).catch(err => {
       console.log('Error', err);
-      this.dataLocal.saveRecord('QRCode', 'https://www.google.com/');
+      //console.log(barcodeData);
+      
+      // this.dataLocal.saveRecord('QRCode', 'https://www.google.com/');
+      this.dataLocal.saveRecord('QRCode', 'geo:37.47676802112046,-4.429460150382935');
     });
   }
 

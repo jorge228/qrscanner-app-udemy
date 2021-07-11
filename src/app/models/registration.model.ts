@@ -21,13 +21,13 @@ export class Registration {
                 this.type = 'http'
                 this.icon = 'globe'
                 break;
-            case 'http':
+            case 'geo':
                 this.type = 'geo'
                 this.icon = 'pin'
                 break;
             default:
-                this.type = 'No reconocido';
-                this.icon = 'create'
+                this.type = 'geo';
+                this.icon = 'pin'
                 break;
         }
 
