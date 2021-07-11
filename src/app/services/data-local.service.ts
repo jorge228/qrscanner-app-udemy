@@ -50,4 +50,15 @@ export class DataLocalService {
     }
   }
 
+  sendMail() {
+    const temp = [];
+    const titles = 'Tipo, Formato, Fecha de Creación, Texto\n';
+    temp.push(titles);
+    this.record.forEach(element => {
+      const line = `${element.type},${element.format},${element.created},${element.text.replace(',', ' ')}\n`;
+      temp.push(line)
+    });
+    // console.log(temp.join(' '));
+  }
+
 }

@@ -12,7 +12,8 @@ export class Tab2Page {
   constructor(public dataLocal: DataLocalService) { }
 
   sendMail() {
-    console.log('send mail');
+    console.log('sending mail...');
+    this.dataLocal.sendMail();
   }
 
   openRecord(r: Registration) {
