@@ -15,7 +15,6 @@ export class Registration {
     private chooseType() {
 
         const initText = this.text.substring(0, 4);
-        console.log('TIPO', initText);
 
         switch (initText) {
             case 'http':
@@ -33,5 +32,5 @@ export class Registration {
         }
 
     }
-    
+
 }
